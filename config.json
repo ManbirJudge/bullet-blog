@@ -1,0 +1,27 @@
+{
+	"params": {
+		"local_server": true,
+		"local_uri": "mysql://root:@localhost/bulltet_blog",
+		"production_uri": "mysql://root:@localhost/bulltet_blog",
+
+		"app_name": "Bullet Blog",
+		"app_tagline": "A Blog Liked by Programmers and Coders",
+		"app_title_description": "A Coding Blog",
+
+		"facebook_url": "https://www.facebook.com",
+		"twitter_url": "https://www.twitter.com",
+		"github_url": "https://github.com/ManbirJudge",
+
+		"email-address": "universal.mango.2009@gmail.com",
+		"email-password": "Man@2009",
+
+		"about_text": "Hello, World! I am Manbir Singh Judge and I create apps and websites like this. This is my second full-stack project, that means a project including back-end e.g. server, front-end e.g. that you see on your browser, database e.g. the place where all posts, user profiles and other data is stored and hosting e.g. paying money make my website available to you.\n\nThanks for reading a small piece of writing in my own words and about page's content will be updated and upgraded soon ...",
+
+		"posts-limit-home": 5,
+
+		"admin_username": "admin",
+		"admin_password": "VBbFtE01uvV8WFTGtPP+",
+
+		"thumb-img-location": "static\\site_data\\posts\\img\\thumb_img"
+	}
+}

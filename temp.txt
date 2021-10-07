@@ -1,0 +1,39 @@
+# def index():
+#     # Defining Some ( only 1 ) Variables
+#     home_post_limit = params['posts-limit-home']
+#
+#     # Getting All Posts
+#     posts = Posts.query.filter_by().all()
+#
+#     # Getting the Last Page No and Current Page No
+#     last_page_no = math.ceil(len(posts) / home_post_limit)
+#     cur_page_no = request.args.get('page-no')
+#
+#     print(len(posts))
+#
+#     # If Current Page No is None then make it 1
+#     if cur_page_no is None:  # OR not(str(cur_page_no).isnumeric())
+#         cur_page_no = 1
+#
+#     cur_page_no = int(cur_page_no)
+#
+#     # Pagination Logic
+#     # First Page
+#     if cur_page_no == 1:
+#         prev_page = None
+#         next_page = f'/?page-no={cur_page_no + 1}'
+#
+#     # Last Page
+#     elif cur_page_no == last_page_no:
+#         prev_page = f'/?page-no={cur_page_no - 1}'
+#         next_page = None
+#
+#     # Middle Page
+#     else:
+#         prev_page = f'/?page-no={cur_page_no - 1}'
+#         next_page = f'/?page-no={cur_page_no + 1}'
+#
+#     # Getting Posts for the Current Page
+#     posts = posts[(cur_page_no - 1) * home_post_limit:(cur_page_no - 1) * home_post_limit + home_post_limit]
+#
+#     return render_template('index.html', params=params, posts=posts, prev_page=prev_page, next_page=next_page)

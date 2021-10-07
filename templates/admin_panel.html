@@ -1,0 +1,55 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <!-- Page Header-->
+    <header class="masthead" style="background-image: url('{{ url_for('static', filename='assets/img/home-bg.jpg') }}')">
+        <div class="container position-relative px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <div class="site-heading">
+                        <h1>Admin Panel</h1>
+                        <span class="subheading">You can edit the site data here</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content-->
+    <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-10 mb-4">
+                <h2>Actions</h2>
+                <a role="button" href="/admin-panel/posts/add-edit/0" class="btn btn-primary">Add Post</a>
+                <a role="button" href="/admin-panel/logout" class="btn btn-danger">Logout</a>
+
+                <h2 class="mt-4">Upload a File</h2>
+                <p>We will add file uploader</p>
+
+                <h2>All Posts</h2>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">S. No.</th>
+                            <th scope="col">Title</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Edit</th>
+                            <th scope="col">Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for post in posts %}
+                            <tr>
+                                <td>{{ post.s_no }}</th>
+                                <td>{{ post.title }}</th>
+                                <td>{{ post.date }}</th>
+                                <td><a role="button" href="/admin-panel/posts/add-edit/{{ post.s_no }}" class="btn btn-primary">Edit</a></th>
+                                <td><a role="button" href="/admin-panel/posts/delete/{{ post.s_no }}" class="btn btn-danger">Delete</a></th>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}

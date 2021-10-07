@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% block body %}
+    <!-- Page Header-->
+    <header class="masthead" style="background-image: url('{{ url_for('static', filename='assets/img/edit-post-bg.jpg') }}')">
+        <div class="container position-relative px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <div class="page-heading">
+                        <h1>Edit a Post</h1>
+                        <!-- <span class="subheading">Have questions? I have answers.</span> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Main Content-->
+    <main class="mb-4">
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <p>Change Fields to Edit a Post!</p>
+                    <div class="my-5">
+                        <!-- * * * * * * * * * * * * * * *-->
+                        <!-- * * SB Forms Contact Form * *-->
+                        <!-- * * * * * * * * * * * * * * *-->
+                        <!-- This form is pre-integrated with SB Forms.-->
+                        <!-- To make this form functional, sign up at-->
+                        <!-- https://startbootstrap.com/solution/contact-forms-->
+                        <!-- to get an API token!-->
+                        <form id="contactForm" method="POST" action="/admin-panel/posts/add-edit/{{ post_s_no }}" data-sb-form-api-token="API_TOKEN" enctype="multipart/form-data">
+                            <div class="form-floating">
+                                <input class="form-control" id="title" name="title" type="text" placeholder="Post title here ..." data-sb-validations="required" value="{{ post.title }}" />
+                                <label for="title">Title</label>
+                                <div class="invalid-feedback" data-sb-feedback="title:required">A title is required!</div>
+                            </div>
+                            <div class="form-floating">
+                                <input class="form-control" id="sub_title" name="sub_title" type="text" placeholder="Post sub-title here ..." data-sb-validations="required" value="{{ post.subtitle }}" />
+                                <label for="sub_title">Sub-title</label>
+                                <div class="invalid-feedback" data-sb-feedback="sub_title:required">A slug is required!</div>
+                            </div>
+                            <div class="form-floating">
+                                <input class="form-control" id="slug" name="slug" type="text" placeholder="Post slug ..." data-sb-validations="required" value="{{ post.slug }}" />
+                                <label for="slug">Slug</label>
+                                <div class="invalid-feedback" data-sb-feedback="slug:required">A slug is required!</div>
+                            </div>
+                            <div class="form-floating">
+                                <textarea class="form-control" id="content" name="content" placeholder="Post content here ..." style="height: 12rem" data-sb-validations="required">{{ post.content }}</textarea>
+                                <label for="content">Content</label>
+                                <div class="invalid-feedback" data-sb-feedback="content:required">Content is required!</div>
+                            </div>
+                            <div class="form-floating">
+                                <input class="form-control" type="file" id="thumb-img" name="thumb-img">
+                                <div id="thum-img-help" class="form-text">5 MB limit. {% if post_s_no != '0' %}If you do not upload an image, thumb image will stay unchanged.{% endif %}</div>
+                            </div>
+
+                            <!-- Submit Button-->
+                            <button class="btn btn-primary text-uppercase mt-3" id="submit_button" type="submit">Send</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock %}
