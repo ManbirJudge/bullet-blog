@@ -33,7 +33,7 @@ app.config.update(
     MAIL_PASSWORD=EMAIL_PASSWORD
 )
 
-app.secret_key = '9io-*lb#5HIxQSS-A!meJN8B$-d$!LZbx*f3L0jg'
+app.secret_key = 'secret-key'
 
 db = SQLAlchemy(app)
 mail = Mail(app)
